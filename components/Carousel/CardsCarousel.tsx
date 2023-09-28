@@ -2,6 +2,7 @@
 import { Carousel } from '@mantine/carousel'
 import { useMediaQuery } from '@mantine/hooks'
 import { Paper, Text, Title, Button, useMantineTheme, rem } from '@mantine/core'
+import { IconArrowRight, IconArrowLeft } from '@tabler/icons-react'
 import classes from './CardsCarousel.module.css'
 
 interface CardProps {
@@ -67,7 +68,7 @@ const data = [
   },
   {
     image:
-      'https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+      'https://edaded.ru/media/original_images/istockphoto-1044224574-612x612.jpg',
     title: 'Active volcanos reviews: travel at your own risk',
     category: 'nature',
   },
@@ -84,11 +85,15 @@ export function CardsCarousel() {
 
   return (
     <Carousel
-      slideSize={mobile ? '70%' : '30%'}
+      nextControlIcon={<IconArrowRight />}
+      previousControlIcon={<IconArrowLeft />}
+      slideSize={mobile ? '100%' : '25%'}
       slideGap="md"
       loop
-      // withControls={false}
+      withControls={mobile ? false : true}
       withIndicators
+      align={'start'}
+      slidesToScroll={1}
     >
       {slides}
     </Carousel>
