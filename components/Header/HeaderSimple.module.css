@@ -1,0 +1,15 @@
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--mantine-color-text);
+}
